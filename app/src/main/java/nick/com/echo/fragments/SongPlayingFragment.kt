@@ -144,9 +144,7 @@ class SongPlayingFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         audioV?.onResume()
-        mSensorManager?.registerListener(mSensorListener,
-                mSensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_NORMAL)
+       
         if (mediaPlayer?.isPlaying() as Boolean) {
             currentSongHelper.isPlaying = true
             playpauseImageButton?.setBackgroundResource(R.drawable.ic_pause_button)
