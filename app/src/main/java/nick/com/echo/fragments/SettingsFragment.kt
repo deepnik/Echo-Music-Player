@@ -54,11 +54,10 @@ class SettingsFragment : Fragment() {
         val prefs = _activity?.getSharedPreferences(SettingsFragment.Statified.MY_PREFS_NAME, MODE_PRIVATE)
         val isAllowed = prefs?.getBoolean("feature", false)
         if (isAllowed as Boolean) {
-             shakeSwitch?.isChecked=true
+             shakeSwitch?.setChecked(true)
         } else {
-            shakeSwitch?.isChecked=false
             
-        }
+             }
         shakeSwitch?.setOnCheckedChangeListener({ compoundButton, b ->
             if (b) {
                 val editor = activity?.getSharedPreferences(SettingsFragment.Statified.MY_PREFS_NAME, MODE_PRIVATE)?.edit()
